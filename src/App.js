@@ -26,14 +26,25 @@ function Form() {
 }
 function PackingList() {
   return (
-    <ul className="list">
-      {initialItems.map((item) => (
-        <Item item={item} />
-      ))}
-    </ul>
+    <div className="list">
+      <ul>
+        {initialItems.map((item) => (
+          <Item item={item} />
+        ))}
+      </ul>
+    </div>
   );
 }
-function Item(props) {}
+function Item({ item }) {
+  return (
+    <li>
+      <span>
+        {item.quantity} {item.description}
+      </span>
+      <button>❌</button>
+    </li>
+  );
+}
 
 function Stats() {
   return (
